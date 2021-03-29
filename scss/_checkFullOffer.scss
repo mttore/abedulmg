@@ -1,0 +1,56 @@
+.checkFullOffer {
+    background-color: $mainColorLighter;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .paragraphUnderline {
+        border-bottom: 2px solid white;
+
+        .checkFullOffer__paragraph {
+            font-size: 36px;
+            color: white;
+            font-family: 'Dancing Script', cursive;
+            letter-spacing: 3px;
+        }
+    }
+
+    .chceckFullOffer__btn {
+        height: 100px;
+        width: 440px;
+        font-size: 24px;
+        letter-spacing: 2px;
+        border: 2px solid white;
+        background-color: transparent;
+    }
+
+}
+
+@media(max-width:500px) {
+    .checkFullOffer {
+        .paragraphUnderline {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid white;
+
+            .checkFullOffer__paragraph {
+                font-size: 36px;
+                color: white;
+                font-family: 'Dancing Script', cursive;
+                letter-spacing: 3px;
+            }
+        }
+
+        .chceckFullOffer__btn {
+            height: 100px;
+            width: 90%;
+            font-size: 24px;
+            letter-spacing: 2px;
+            border: 2px solid white;
+            background-color: transparent;
+        }
+
+    }
+}

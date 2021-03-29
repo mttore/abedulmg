@@ -1,0 +1,75 @@
+.mobility {
+    @extend .aboutUs;
+}
+
+.mobility__container {
+    display: flex;
+    flex-wrap: wrap;
+
+    .squares__list--sectionMobility {
+        box-shadow: none;
+
+
+        .squares__item--sectionMobility {
+            align-items: flex-start;
+            text-align: left;
+            padding: 0 20px;
+            min-height: 500px;
+            height: auto;
+            width: 50%;
+            box-shadow: none;
+        }
+    }
+
+    .mobility__image {
+        width: 500px;
+        height: 400px;
+        background: url(../SVG/car.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+@media (max-width: 1000px) {
+    .mobility__container {
+        display: flex;
+        flex-wrap: wrap;
+
+        .squares__list--sectionMobility {
+            box-shadow: none;
+
+            .squares__item--sectionMobility {
+                align-items: center;
+                text-align: left;
+                height: 400px;
+                width: 100%;
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+@media(max-width:1000px) {
+    .mobility {
+        padding: 100px 0 0 0;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .mobility__container {
+        display: flex;
+        flex-wrap: wrap;
+
+        .squares__list--sectionMobility {
+            .squares__item--sectionMobility {
+                text-align: justify;
+            }
+
+            .mobility__image {
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.test {
+    height: 100vh;
+}
+
+@import'variables';
+@import'modulars';
+@import'navigation';
+@import'carousel';
+@import'squares';
+@import'aboutMassage';
+@import'aboutUs';
+@import'maderotherapy';
+@import'mobility';
+@import'checkFullOffer';
+@import'contact';
+@import'footer';
+@import'burgerMenu';

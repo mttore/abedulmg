@@ -1,0 +1,105 @@
+.massagesContainer {
+    display: flex;
+
+    .massages__image {
+        width: 50%;
+        height: auto;
+        background: url(../images/4.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .squares__list--Massage {
+        width: 50%;
+
+        .squares__item--sectionMassage {
+            width: 50%;
+
+            h2 {
+                color: black;
+            }
+
+            .massages__icon {
+                color: $mainColor;
+                font-size: 40px;
+            }
+        }
+    }
+
+
+}
+
+.squares__list--maderotherapy {
+    flex-wrap: wrap;
+    margin-top: 100px;
+
+    .squares__item--maderotherapy {
+        height: auto;
+        width: 500px;
+        text-align: left;
+    }
+
+    .squares__item--text {
+        padding: 20px;
+    }
+}
+
+.maderoteraphy__image {
+    height: 473px;
+    width: 500px;
+}
+
+@media (max-width: 1024px) {
+    .massagesContainer {
+        .massages__image {
+            display: none;
+        }
+
+        .squares__list--Massage {
+            width: 100%;
+
+            .squares__item--sectionMassage {
+                border: 1px solid #f8f8f8;
+            }
+        }
+    }
+}
+
+@media(max-width:500px) {
+    .massagesContainer {
+        .squares__list--Massage {
+            .squares__item--sectionMassage {
+                width: 100%;
+            }
+        }
+    }
+
+    .squares__list--maderotherapy {
+
+
+        .squares__item--maderotherapy {
+            min-height: 500px;
+            height: auto;
+            width: 100%;
+            text-align: justify;
+        }
+
+        .squares__item--text {
+            padding: 20px;
+
+            .squares__textList {
+                text-align: left;
+                padding: 20px;
+            }
+        }
+
+        .squares__item--maderotherapy:nth-child(2) {
+            display: none;
+        }
+    }
+
+    .maderoteraphy__image {
+        height: 453px;
+        width: 100%;
+    }
+}
