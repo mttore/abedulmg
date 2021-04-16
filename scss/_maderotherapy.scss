@@ -14,14 +14,22 @@
 
         .squares__item--sectionMassage {
             width: 50%;
+            padding: 10px;
+            justify-content: flex-start;
 
             h2 {
+                margin-top: 10px;
                 color: black;
             }
 
             .massages__icon {
                 color: $mainColor;
                 font-size: 40px;
+                margin-top: 20px;
+            }
+
+            p {
+                margin-top: 10px;
             }
         }
     }
@@ -32,6 +40,7 @@
 .squares__list--maderotherapy {
     flex-wrap: wrap;
     margin-top: 100px;
+    overflow: hidden;
 
     .squares__item--maderotherapy {
         height: auto;

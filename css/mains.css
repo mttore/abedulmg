@@ -25,6 +25,177 @@ button {
   max-width: 1000px;
 }
 
+div,
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.fbgt {
+  background: transparent;
+}
+
+.animatable,
+.animatable2 {
+  /* initially hide animatable objects */
+  visibility: hidden;
+  /* initially pause animatable objects their animations */
+  animation-play-state: paused;
+}
+
+/* show objects being animated */
+.animated {
+  visibility: visible;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+  animation-play-state: running;
+}
+
+/* CSS Animations (extracted from http://glifo.uiparade.com/) */
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeBgColor {
+  0% {
+    background: none;
+  }
+  70% {
+    background: none;
+  }
+  100% {
+    background: #464646;
+  }
+}
+
+.animated.animationDelay {
+  animation-delay: .4s;
+  -webkit-animation-delay: .4s;
+}
+
+.animated.animationDelayMed {
+  animation-delay: 1.2s;
+  -webkit-animation-delay: 1.2s;
+}
+
+.animated.animationDelayLong {
+  animation-delay: 1.6s;
+  -webkit-animation-delay: 1.6s;
+}
+
+.animated.fadeBgColor {
+  animation-name: fadeBgColor;
+}
+
+.animated.bounceIn {
+  animation-name: bounceIn;
+}
+
+.animated.bounceInRight {
+  animation-name: bounceInRight;
+}
+
+.animated.bounceInLeft {
+  animation-name: bounceInLeft;
+}
+
+.animated.fadeIn {
+  animation-name: fadeIn;
+}
+
+.animated.fadeInDown {
+  animation-name: fadeInDown;
+}
+
+.animated.fadeInUp {
+  animation-name: fadeInUp;
+}
+
+.animated.moveUp {
+  animation-name: moveUp;
+}
+
 .menu {
   position: fixed;
   z-index: 3;
@@ -34,6 +205,7 @@ button {
   justify-content: space-between;
   background-color: white;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  height: 60px;
 }
 
 .menu .logo {
@@ -58,11 +230,20 @@ button {
   padding: 0px 10px;
   line-height: 60px;
   margin-left: 10px;
+  transition: 0.3s;
+}
+
+.menu__list .menu__item:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .menu__list .menu__item .menu__link {
   text-decoration: none;
   color: #4CAB7A;
+}
+
+.menu__list .menu__item .menu__link:hover {
+  color: #0D6F3C;
 }
 
 .menu__list .menu__button {
@@ -118,6 +299,12 @@ button {
 @media (max-width: 1024px) {
   .horizontalMenu {
     display: none;
+  }
+  .menu__list .menu__item {
+    transition: none;
+  }
+  .menu__list .menu__item:hover {
+    background-color: #fff;
   }
 }
 
@@ -201,10 +388,15 @@ button {
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  background-color: rgba(51, 51, 51, 0.424);
+  background-color: rgba(51, 51, 51, 0.507);
   color: white;
   text-align: center;
   font-family: "Kanit";
+  transition: 0.6s;
+}
+
+.carousel .carousel__textContent:hover {
+  background-color: rgba(51, 51, 51, 0.808);
 }
 
 .carousel .carousel__textContent p {
@@ -217,11 +409,21 @@ button {
   font-size: 80px;
 }
 
-.carousel .carousel__textContent button {
-  background-color: #4CAB7A;
+.carousel .carousel__textContent a {
   width: 30%;
   height: 15%;
-  font-size: 24px;
+}
+
+.carousel .carousel__textContent a button {
+  background-color: #4CAB7A;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  transition: 0.6s;
+}
+
+.carousel .carousel__textContent a button:hover {
+  background-color: #0D6F3C;
 }
 
 .owl-carousel {
@@ -256,6 +458,11 @@ button {
   font-size: 30px;
   color: white;
   box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.75);
+  transition: 0.6s;
+}
+
+.owl-nav .owl-prev:hover, .owl-nav .owl-next:hover {
+  box-shadow: 10px 10px 10px 0px rgba(255, 254, 254, 0.75);
 }
 
 .owl-nav .owl-next {
@@ -289,9 +496,13 @@ button {
   .carousel .carousel__textContent {
     width: 50%;
   }
-  .carousel .carousel__textContent button {
+  .carousel .carousel__textContent a {
     width: 40%;
     height: 15%;
+  }
+  .carousel .carousel__textContent a button {
+    width: 100%;
+    height: 100%;
     font-size: 20px;
   }
 }
@@ -303,10 +514,14 @@ button {
   .carousel .carousel__textContent h1 {
     font-size: 50px;
   }
-  .carousel .carousel__textContent button {
-    background-color: #4CAB7A;
+  .carousel .carousel__textContent a {
     width: 30%;
     height: 15%;
+  }
+  .carousel .carousel__textContent a button {
+    background-color: #4CAB7A;
+    width: 100%;
+    height: 100%;
     font-size: 16px;
   }
   .owl-nav {
@@ -318,10 +533,14 @@ button {
   .carousel .carousel__textContent p {
     font-size: 16px;
   }
-  .carousel .carousel__textContent button {
-    background-color: #4CAB7A;
+  .carousel .carousel__textContent a {
     width: 40%;
     height: 15%;
+  }
+  .carousel .carousel__textContent a button {
+    background-color: #4CAB7A;
+    width: 100%;
+    height: 100%;
     font-size: 16px;
   }
 }
@@ -330,25 +549,50 @@ button {
   .carousel .carousel__textContent p {
     font-size: 16px;
   }
-  .carousel .carousel__textContent button {
-    background-color: #4CAB7A;
+  .carousel .carousel__textContent a {
     width: 40%;
     height: 15%;
+  }
+  .carousel .carousel__textContent a button {
+    background-color: #4CAB7A;
+    width: 100%;
+    height: 100%;
     font-size: 12px;
   }
 }
 
 @media (max-width: 500px) {
   .carousel {
+    top: 60px;
+  }
+  .carousel .carousel__textContent {
     display: none;
+  }
+  .owl-dots .owl-dot {
+    height: 10px;
+    width: 10px;
+  }
+  .owl-dots .active {
+    border: 1px solid black;
+    background-color: #0D6F3C;
+    opacity: 1;
   }
 }
 
 .squares__list {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.squares__list .scrollpoint {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background-color: black;
+  bottom: 0;
 }
 
 .squares__list .squares__item {
@@ -378,8 +622,13 @@ button {
 .squares__list .squares__item .squares__btn {
   width: 200px;
   height: 50px;
-  background-color: #0D6F3C;
+  background-color: #4CAB7A;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.6s;
+}
+
+.squares__list .squares__item .squares__btn:hover {
+  background-color: #0D6F3C;
 }
 
 .squares__list .squares__item .squares__btn i {
@@ -405,80 +654,6 @@ button {
     text-align: center;
     font-family: "Martel";
   }
-}
-
-.aboutMassage {
-  background-color: #e6004960;
-  background: url(/SVG/topography1test.svg);
-  position: relative;
-  overflow: hidden;
-}
-
-.aboutMassage__container {
-  display: flex;
-  margin: 60px 20px;
-  height: 200px;
-  justify-content: space-between;
-}
-
-.aboutMassage__container .aboutMassage__square {
-  z-index: 1;
-  background-color: #fff;
-  padding: 1%;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  width: 200px;
-  border: 2px solid black;
-  font-size: 24px;
-  font-family: "Kanit";
-}
-
-.aboutMassage__container .aboutMassage__textContainer {
-  z-index: 2;
-  background-color: #e6004960;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  margin: 20px;
-  width: 75%;
-  font-size: 16px;
-  font-family: "Martel";
-}
-
-.aboutMassage__container .aboutMassage__textContainer .aboutMassage__btn {
-  background-color: #0D6F3C;
-  border: none;
-  width: 200px;
-  height: 40px;
-  font-size: 24px;
-  box-shadow: 5px 10px 8px 2px rgba(0, 0, 0, 0.25);
-}
-
-.aboutMassage__textContent--image {
-  background-image: url(/images/Relaxationzone.jpg);
-  background-position: center;
-  background-size: cover;
-}
-
-.aboutMassage__vector {
-  position: absolute;
-  height: 30vw;
-  width: 30vw;
-  background: url(/SVG/topography1.svg);
-  background-size: contain;
-}
-
-.aboutMassage__vector--top {
-  top: -15%;
-  left: -12%;
-  transform: rotate(-25deg);
-}
-
-.aboutMassage__vector--bottom {
-  bottom: -15%;
-  right: -12%;
-  transform: rotate(-25deg);
 }
 
 .aboutUs, .mobility {
@@ -555,20 +730,29 @@ button {
 
 .massagesContainer .squares__list--Massage .squares__item--sectionMassage {
   width: 50%;
+  padding: 10px;
+  justify-content: flex-start;
 }
 
 .massagesContainer .squares__list--Massage .squares__item--sectionMassage h2 {
+  margin-top: 10px;
   color: black;
 }
 
 .massagesContainer .squares__list--Massage .squares__item--sectionMassage .massages__icon {
   color: #0D6F3C;
   font-size: 40px;
+  margin-top: 20px;
+}
+
+.massagesContainer .squares__list--Massage .squares__item--sectionMassage p {
+  margin-top: 10px;
 }
 
 .squares__list--maderotherapy {
   flex-wrap: wrap;
   margin-top: 100px;
+  overflow: hidden;
 }
 
 .squares__list--maderotherapy .squares__item--maderotherapy {
@@ -685,6 +869,10 @@ button {
   .mobility__container .squares__list--sectionMobility .mobility__image {
     width: 100%;
   }
+}
+
+.checkFullOfferContainer {
+  overflow: hidden;
 }
 
 .checkFullOffer {
@@ -992,5 +1180,86 @@ button {
   .burger-menu {
     display: block;
   }
+}
+
+.offer {
+  background: url(../images/pattern.png);
+  padding: 160px 0 100px 0;
+  text-align: center;
+}
+
+.offer .line {
+  width: 15%;
+}
+
+.offer .aboutUs__introduction {
+  margin-bottom: 50px;
+}
+
+.offer .aboutUs__introduction .aboutUs__header {
+  margin-bottom: 5px;
+  display: block;
+  font-family: "Kanit";
+  border-radius: 16px;
+  text-transform: uppercase;
+  font-weight: 400;
+  box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.03);
+}
+
+.offer__item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 20px;
+  background-color: #FFF5E9;
+}
+
+.offer__item .offer__description {
+  display: flex;
+  width: 550px;
+  height: 300px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: "Martel";
+  background-color: #FFF5E9;
+}
+
+.offer__item .offer__description .offer__header {
+  font-weight: 400;
+  font-family: "Kanit";
+  color: #0D6F3C;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.offer__item .offer__description p {
+  text-align: center;
+}
+
+.offer__item .offer__image {
+  margin: 20px 20px;
+  width: 410px;
+  height: 260px;
+}
+
+.offer__item .offer__image img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 333px) {
+  .offer__item .offer__description {
+    height: 350px;
+  }
+}
+
+.offer__item:nth-child(odd) .offer__description {
+  order: 2;
+}
+
+.offer__item:nth-child(odd) .offer__image {
+  order: 1;
 }
 /*# sourceMappingURL=mains.css.map */

@@ -7,6 +7,7 @@
     justify-content: space-between;
     background-color: white;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    height: 60px;
 
     .logo {
         display: flex;
@@ -30,10 +31,19 @@
         padding: 0px 10px;
         line-height: 60px;
         margin-left: 10px;
+        transition: 0.3s;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
 
         .menu__link {
             text-decoration: none;
             color: $mainColorLighter;
+
+            &:hover {
+                color: $mainColor;
+            }
         }
     }
 
@@ -94,6 +104,19 @@
 @media (max-width:1024px) {
     .horizontalMenu {
         display: none;
+    }
+
+    .menu__list {
+
+        .menu__item {
+            transition: none;
+
+            &:hover {
+                background-color: #fff
+            }
+
+
+        }
     }
 }
 
