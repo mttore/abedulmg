@@ -719,7 +719,7 @@ a {
 .massagesContainer .massages__image {
   width: 50%;
   height: auto;
-  background: url(../images/4.jpg);
+  background: url(../images/ABedul_masaz4.jpg);
   background-size: cover;
   background-position: center;
 }
@@ -1184,82 +1184,103 @@ a {
 
 .offer {
   background: url(../images/pattern.png);
-  padding: 160px 0 100px 0;
-  text-align: center;
+  padding: 60px 0 100px 0;
 }
 
-.offer .line {
-  width: 15%;
-}
-
-.offer .aboutUs__introduction {
-  margin-bottom: 50px;
-}
-
-.offer .aboutUs__introduction .aboutUs__header {
-  margin-bottom: 5px;
-  display: block;
-  font-family: "Kanit";
-  border-radius: 16px;
-  text-transform: uppercase;
-  font-weight: 400;
-  box-shadow: -12px -12px 12px 0 white, 12px 12px 12px 0 rgba(0, 0, 0, 0.03);
-}
-
-.offer__item {
+.offer__hero {
+  margin-bottom: 100px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 20px;
-  background-color: #FFF5E9;
-}
-
-.offer__item .offer__description {
-  display: flex;
-  width: 550px;
-  height: 300px;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  font-family: "Martel";
-  background-color: #FFF5E9;
+  height: 50vh;
+  background: url(../images/flowers.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
-.offer__item .offer__description .offer__header {
+.offer__hero .hero__header {
+  padding: 20px 150px;
+  font-size: 50px;
+  font-family: "Nunito Sans";
+  font-weight: 100;
+  letter-spacing: 2px;
+  color: white;
+  border: 2px solid white;
+}
+
+.offerContainer {
+  display: flex;
+}
+
+.offer__items {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+}
+
+.offer__items .offer__item {
+  padding: 20px 0;
+}
+
+.offer__items .offer__item .offer__header {
+  margin-bottom: 20px;
   font-weight: 400;
   font-family: "Kanit";
   color: #0D6F3C;
   font-size: 24px;
-  text-transform: uppercase;
-  text-align: center;
 }
 
-.offer__item .offer__description p {
-  text-align: center;
+.offer__items .offer__item p {
+  margin-bottom: 20px;
+  font-family: "Martel";
 }
 
-.offer__item .offer__image {
-  margin: 20px 20px;
-  width: 410px;
-  height: 260px;
+.offer__images {
+  width: 480px;
+  margin-left: 20px;
 }
 
-.offer__item .offer__image img {
+.offer__images img {
+  max-height: 600px;
+  margin-bottom: 40px;
   width: 100%;
-  height: 100%;
 }
 
-@media (max-width: 333px) {
-  .offer__item .offer__description {
-    height: 350px;
+.contact__container--offer {
+  box-shadow: none;
+}
+
+@media (max-width: 1000px) {
+  .offerContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  .offer__items {
+    width: 100%;
+    padding: 0px 16px;
+  }
+  .offer__images {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 80%;
+    margin-left: 0;
+  }
+  .offer__images img {
+    width: 100%;
   }
 }
 
-.offer__item:nth-child(odd) .offer__description {
-  order: 2;
-}
-
-.offer__item:nth-child(odd) .offer__image {
-  order: 1;
+@media (max-width: 550px) {
+  .offer__hero {
+    margin-bottom: 50px;
+  }
+  .offer__hero .hero__header {
+    padding: 20px 50px;
+  }
+  .offer__images {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 /*# sourceMappingURL=mains.css.map */
