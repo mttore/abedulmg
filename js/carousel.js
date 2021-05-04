@@ -1,7 +1,7 @@
 $(".owl-carousel").owlCarousel({
-    // animateOut: 'fadeOut',
-    // autoplay: true,
-    // autoplayTimeout: 5000,
+    animateOut: 'fadeOut',
+    autoplay: true,
+    autoplayTimeout: 7000,
     loop:true,
     dots: true,
     nav: true,
